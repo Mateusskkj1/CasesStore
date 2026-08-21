@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseStore - Acessórios para Celular</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones via Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">CASE<span>STORE</span></div>
+        
+        <!-- Menu -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#catalogo">Cases</a></li>
+                <li><a href="#beneficios">Vantagens</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="cart-btn" onclick="openCart()">
+                <i data-lucide="shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>PROTEÇÃO & <span>ESTILO</span> PARA SEU APARELHO</h1>
+            <p>As melhores cases, películas e acessórios com design exclusivo e máxima durabilidade.</p>
+            <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Seção Catálogo com Filtros -->
+    <section id="catalogo" class="catalogo">
+        <h2>Catálogo de Cases & Acessórios</h2>
+        
+        <!-- Filtros -->
+        <div class="filtros">
+            <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('iphone')">iPhone</button>
+            <button class="filter-btn" onclick="filterProducts('samsung')">Samsung</button>
+            <button class="filter-btn" onclick="filterProducts('outros')">Acessórios</button>
+        </div>
+
+        <!-- Cards do Catálogo -->
+        <div class="products-grid">
+            <div class="product-card" data-category="iphone">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=500" alt="Case Cyber Neon iPhone">
+                </div>
+                <h3>Case Cyber Neon - iPhone</h3>
+                <p class="price">R$ 59,90</p>
+                <button class="btn-card" onclick="addToCart('Case Cyber Neon - iPhone')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-category="samsung">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1541877944-ac82a091518a?w=500" alt="Case Anti-Impacto Samsung">
+                </div>
+                <h3>Case Anti-Impacto - Samsung</h3>
+                <p class="price">R$ 49,90</p>
+                <button class="btn-card" onclick="addToCart('Case Anti-Impacto - Samsung')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-category="outros">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500" alt="Carregador Turbo Neon">
+                </div>
+                <h3>Carregador Fast Charge 30W</h3>
+                <p class="price">R$ 89,90</p>
+                <button class="btn-card" onclick="addToCart('Carregador Fast Charge 30W')">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-category="iphone">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500" alt="Case MagSafe Transparente">
+                </div>
+                <h3>Case MagSafe Glow - iPhone</h3>
+                <p class="price">R$ 69,90</p>
+                <button class="btn-card" onclick="addToCart('Case MagSafe Glow - iPhone')">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="beneficios">
+        <div class="benefit-card">
+            <i data-lucide="truck"></i>
+            <h3>Frete Rápido</h3>
+            <p>Entrega expressa para todo o Brasil com código de rastreio.</p>
+        </div>
+        <div class="benefit-card">
+            <i data-lucide="shield-check"></i>
+            <h3>Garantia Extrema</h3>
+            <p>3 meses de garantia total contra defeitos de fabricação.</p>
+        </div>
+        <div class="benefit-card">
+            <i data-lucide="zap"></i>
+            <h3>Alta Qualidade</h3>
+            <p>Materiais de alta densidade que protegem contra quedas brutais.</p>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="sobre-content">
+            <h2>Sobre a <span>CASESTORE</span></h2>
+            <p>Nascemos com a missão de unir a proteção máxima para o seu smartphone com a estética futurista e urbana. Nossas capinhas e acessórios são testados em condições extremas para garantir alta durabilidade sem perder a elegância.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>PRONTO PARA DAR UM UPGRADE NO SEU PHONE?</h2>
+        <p>Garanta 10% OFF na sua primeira compra usando o cupom <strong>CASE10</strong></p>
+        <a href="#catalogo" class="btn-primary">Aproveitar Oferta</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>CASE<span>STORE</span></h3>
+                <p>Estilo e proteção no mesmo nível.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#catalogo">Produtos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CaseStore. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
